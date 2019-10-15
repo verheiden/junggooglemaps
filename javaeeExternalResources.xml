@@ -1,0 +1,8 @@
+<application>
+  <component name="ExternalResourceManagerImpl">
+    <ignored-resource url="http://appengine.google.com/ns/1.0" />
+    <ignored-resource url="http://java.sun.com/xml/ns/javaee" />
+    <ignored-resource url="http://schemas.android.com/apk/res/android" />
+    <ignored-resource url="https://github.com/gwtproject/gwt/blob/master/distro-source/core/src/gwt-module.dtd" />
+  </component>
+</application>

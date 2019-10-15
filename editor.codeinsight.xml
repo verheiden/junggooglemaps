@@ -1,0 +1,13 @@
+<application>
+  <component name="CodeInsightSettings">
+    <option name="SHOW_INFERRED_ANNOTATIONS_INLINE" value="true" />
+    <option name="AUTO_POPUP_JAVADOC_INFO" value="true" />
+    <EXCLUDED_PACKAGE NAME="com.yuzaco.apps.recycleview.CountryAdapter.MyViewHolder" />
+  </component>
+  <component name="DaemonCodeAnalyzerSettings">
+    <option name="ERROR_STRIPE_MARK_MIN_HEIGHT" value="3" />
+  </component>
+  <component name="JavaCodeFoldingSettings">
+    <option name="collapseAnnotations" value="true" />
+  </component>
+</application>
