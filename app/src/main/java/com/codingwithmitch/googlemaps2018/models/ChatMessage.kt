@@ -1,6 +1,5 @@
 package com.codingwithmitch.googlemaps2018.models
 
-import apps.com.codingwithmitch.googlemaps2018.models.User
 import com.google.firebase.firestore.ServerTimestamp
 import java.util.*
 

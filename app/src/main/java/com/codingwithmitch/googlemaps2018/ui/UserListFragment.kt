@@ -1,5 +1,146 @@
 package com.codingwithmitch.googlemaps2018.ui
 
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.annotation.Nullable
+import androidx.core.app.ActivityCompat
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
+import com.codingwithmitch.googlemaps2018.R
+import com.codingwithmitch.googlemaps2018.adapters.UserRecyclerAdapter
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
+import com.google.android.gms.maps.OnMapReadyCallback
+import apps.com.codingwithmitch.googlemaps2018.Constants.Companion.MAPVIEW_BUNDLE_KEY
+
+
+class UserListFragment : Fragment(), OnMapReadyCallback {
+
+    //widgets
+    private var mUserListRecyclerView: RecyclerView? = null
+    private var mMapView: MapView? = null
+
+
+    //vars
+    private var mUserList: ArrayList<User>? = ArrayList<User>()
+    private var mUserRecyclerAdapter: UserRecyclerAdapter? = null
+
+    override fun onCreate(@Nullable savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mUserList = arguments?.getParcelableArrayList(getString(R.string.intent_user_list))
+    }
+
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_user_list, container, false)
+        mUserListRecyclerView = view.findViewById(R.id.user_list_recycler_view)
+        mMapView = view.findViewById(R.id.user_list_map)
+
+        initUserListRecyclerView()
+        initGoogleMap(savedInstanceState)
+
+        return view
+    }
+
+
+    private fun initGoogleMap(savedInstanceState: Bundle?) {
+        // *** IMPORTANT ***
+        // MapView requires that the Bundle you pass contain _ONLY_ MapView SDK
+        // objects or sub-Bundles.
+        var mapViewBundle: Bundle? = null
+        mapViewBundle = savedInstanceState?.getBundle(MAPVIEW_BUNDLE_KEY)
+        mMapView!!.onCreate(mapViewBundle)
+        mMapView!!.getMapAsync(this)
+    }
+
+    private fun initUserListRecyclerView() {
+        mUserRecyclerAdapter = mUserList?.let { UserRecyclerAdapter(it) }
+        mUserListRecyclerView!!.setAdapter(mUserRecyclerAdapter)
+        mUserListRecyclerView!!.layoutManager = LinearLayoutManager(getActivity())
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        var mapViewBundle = outState.getBundle(MAPVIEW_BUNDLE_KEY)
+        if (mapViewBundle == null) {
+            mapViewBundle = Bundle()
+            outState.putBundle(MAPVIEW_BUNDLE_KEY, mapViewBundle)
+        }
+
+        mMapView!!.onSaveInstanceState(mapViewBundle)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mMapView!!.onResume()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mMapView!!.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mMapView!!.onStop()
+    }
+
+    override fun onMapReady(map: GoogleMap) {
+        if (ActivityCompat.checkSelfPermission(activity as Context, Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                activity as Context,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
+        }
+        map.isMyLocationEnabled = true
+    }
+
+    override fun onPause() {
+        mMapView!!.onPause()
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        mMapView!!.onDestroy()
+        super.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mMapView!!.onLowMemory()
+    }
+
+    companion object {
+
+        private val TAG = "UserListFragment"
+
+
+        fun newInstance(): UserListFragment {
+            return UserListFragment()
+        }
+    }
+}
+
+
+/*
 import android.animation.ObjectAnimator
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -501,7 +642,7 @@ class UserListFragment : Fragment(), OnMapReadyCallback, View.OnClickListener,
         private val LOCATION_UPDATE_INTERVAL = 3000
     }
 
-}
+*/
 
 
 

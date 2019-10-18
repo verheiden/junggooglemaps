@@ -9,7 +9,6 @@ import android.view.WindowManager
 import android.widget.*
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
-import apps.com.codingwithmitch.googlemaps2018.models.User
 import com.codingwithmitch.googlemaps2018.R
 import com.codingwithmitch.googlemaps2018.UserClient
 import com.google.android.gms.tasks.OnCompleteListener

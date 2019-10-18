@@ -1,4 +1,4 @@
-package apps.com.codingwithmitch.googlemaps2018.models
+package com.codingwithmitch.googlemaps2018.models
 
 import android.os.Parcel
 import android.os.Parcelable
@@ -9,7 +9,7 @@ class User : Parcelable {
     var user_id: String? = null
     var username: String? = null
     var avatar: String? = null
-       set(avatar: String?) {this.avatar = avatar}
+        set(avatar: String?) {this.avatar = avatar}
 
     constructor(email: String, user_id: String, username: String, avatar: String) {
         this.email = email
@@ -26,9 +26,9 @@ class User : Parcelable {
         username = input.readString()
         avatar = input.readString()
     }
-   companion object CREATOR : Parcelable.Creator<User>
+    companion object CREATOR : Parcelable.Creator<User>
     {
-        override fun createFromParcel(parcel : Parcel ): User {
+        override fun createFromParcel(parcel : Parcel): User {
             return User(parcel)
         }
 
@@ -58,6 +58,4 @@ class User : Parcelable {
         dest.writeString(avatar)
     }
 
-
 }
-

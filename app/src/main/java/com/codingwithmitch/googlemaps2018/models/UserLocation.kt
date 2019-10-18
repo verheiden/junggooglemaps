@@ -2,16 +2,15 @@ package com.codingwithmitch.googlemaps2018.models
 
 import android.os.Parcel
 import android.os.Parcelable
-import apps.com.codingwithmitch.googlemaps2018.models.User
 import com.google.firebase.firestore.GeoPoint
 import com.google.firebase.firestore.ServerTimestamp
 import java.util.*
 
 class UserLocation : Parcelable {
-    var user : User? = null
     var geo_point : GeoPoint ? = null
     @ServerTimestamp
     var timestamp: Date? = null
+    var user : User? = null
 
     constructor(user : User, geo_point: GeoPoint, timestamp : Date){
         this.user = user

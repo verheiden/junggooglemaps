@@ -4,7 +4,6 @@ import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import apps.com.codingwithmitch.googlemaps2018.models.User
 import com.codingwithmitch.googlemaps2018.adapters.ChatMessageRecyclerAdapter
 import com.codingwithmitch.googlemaps2018.models.ChatMessage
 import com.codingwithmitch.googlemaps2018.models.Chatroom

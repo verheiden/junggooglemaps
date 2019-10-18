@@ -1,6 +1,5 @@
 package com.codingwithmitch.googlemaps2018.models
 
-import apps.com.codingwithmitch.googlemaps2018.models.User
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.clustering.ClusterItem
 
