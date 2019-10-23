@@ -3,5 +3,6 @@
     <option name="USE_SOFT_WRAPS" value="CONSOLE" />
     <option name="SHOW_QUICK_DOC_ON_MOUSE_OVER_ELEMENT" value="true" />
     <option name="QUICK_DOC_ON_MOUSE_OVER_DELAY_MS" value="2000" />
+    <option name="ARE_LINE_NUMBERS_SHOWN" value="false" />
   </component>
 </application>
