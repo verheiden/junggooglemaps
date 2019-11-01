@@ -19,6 +19,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import apps.com.codingwithmitch.googlemaps2018.Constants.Companion.MAPVIEW_BUNDLE_KEY
+import com.codingwithmitch.googlemaps2018.models.User
 
 
 class UserListFragment : Fragment(), OnMapReadyCallback {
