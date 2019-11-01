@@ -1,0 +1,17 @@
+<application>
+  <component name="LanguageInjectionConfiguration">
+    <option name="INSTRUMENTATION" value="ASSERT" />
+    <option name="LANGUAGE_ANNOTATION" value="org.intellij.lang.annotations.Language" />
+    <option name="PATTERN_ANNOTATION" value="org.intellij.lang.annotations.Pattern" />
+    <option name="SUBST_ANNOTATION" value="org.intellij.lang.annotations.Subst" />
+    <option name="RESOLVE_REFERENCES" value="true" />
+    <injection language="JAVA" injector-id="xml">
+      <display-name>android.support.design.widget.AppBarLayout</display-name>
+      <place><![CDATA[xmlTag().withLocalName(string().matches("android.support.design.widget.AppBarLayout"))]]></place>
+    </injection>
+    <injection language="JAVA" injector-id="xml">
+      <display-name>resources</display-name>
+      <place><![CDATA[xmlTag().withLocalName(string().equalTo("resources"))]]></place>
+    </injection>
+  </component>
+</application>

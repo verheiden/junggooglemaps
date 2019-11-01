@@ -1,0 +1,11 @@
+<application>
+  <component name="GithubAccounts">
+    <account id="95aaf782-b8e7-4c30-a938-c781798c1358" name="verheiden">
+      <server host="github.com" />
+    </account>
+  </component>
+  <component name="GithubSettings">
+    <option name="LOGIN" value="verheiden" />
+    <option name="AUTH_TYPE" value="BASIC" />
+  </component>
+</application>
