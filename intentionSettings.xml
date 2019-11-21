@@ -2,5 +2,6 @@
   <component name="IntentionManagerSettings">
     <ignoreAction name="Android/Override Resource in Other Configuration..." />
     <ignoreAction name="Android/Insert App Indexing API Code" />
+    <ignoreAction name="Kotlin/Replace overloaded operator with function call" />
   </component>
 </application>
